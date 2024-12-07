@@ -1,0 +1,400 @@
+/*
+
+Block:
+
+ - Take Full Width If No Width
+ - Add Line Break
+ - Respect Padding, Margin, Width, Height                                          
+
+Inline: 
+
+ - Do Not Respect Width, Height
+ - Respect Padding And Margin Just Left And Right
+- Do Not Add Line Break      
+ - Allow Elements Before And After It                                          
+
+Inline-block:
+
+ - Allow Elements Before And After It 
+ - Respect Padding, Margin, Width, Height
+ - Makes The Width Fits The Element
+
+-------------------------------------------------------------------------
+
+Flex-box:
+
+--- For Parent 
+
+ - display: flex => To start flexable box
+ - display: inline-flex => To allow inline elements to be in the flex box
+ - flex-direction => To choose the direction of the element \.row or colums./ and choose if you want to reverse it -- <defalue => row>
+ - flex-wrap => To choose if you want wrap or no and choose if you want to reverse it -- <defalue => nowrap>
+ - flex-flow => [flex-direction] [flex-wrap]
+ - justify content: => to organize the rest of items horizontally and put spaces <defalue => flex-start>
+ - align-items: => to organize items in content vertically and prevent stretch <defalue => stretch>
+ - align-content: => to organize all the content vertically and put spaces <defalue => stretch>
+ 
+ --- For Child
+ 
+ - flex-grow: => to choose the value of the growth of items <defalue => 0> 
+ - flex-shrink: => to choose the value of the shrink of items <defalue => 1> 
+ - order: => to choose the order of the items <defalue => 0> 
+ - flex-basis: => chooses the width or height automaticlly <defalue => auto> 
+ - flex: [ flex-grow ] [ flex-shrink ] [ flex-basis ] 0 1 auto
+ - align-self: => to choose how to align one item <defalue => auto> 
+ 
+ -------------------------------------------------------------------------
+ 
+ Grid:
+ 
+ --- For Parent
+ - display: grid => To Start Grid
+ - grid-template-columns => (Number Of Columns Width In) => [Px, %, Auto, Fraction, Reapeat(), Mix]
+ - grid-template-rows => (Number Of Rows height In) => [Px, %, Auto, Fraction, Reapeat(), Mix]
+ - grid-template => [grid-template-rows] / [grid-template-columns]
+ - justify content: => to organize the rest of items horizontally and put spaces <defalue => flex-start>
+ - align-content: => to organize all the content vertically and put spaces <defalue => stretch>
+ - grid-template-areas: => To Choose the number of the columns taken by the element by Writing its a name for it  
+ - minmax => To choose min and max width in grid template 
+ - autofill => To apply the auto-fill in grid template 
+ 
+ --- For Child
+ - grid-column => [Grid-column-start]/ , [Grid-column-end *you can write span*]
+ - grid-row => [Grid-row-start]/ , [Grid-row-end *you can write span*]
+ - grid-area => To name the element and mention it in (grid-template-areas) Function 
+ - grid-area =>  [ Grid Row Start ]/ [ Grid column Start ]/ [ Grid Row end ]/  [ Grid column end ] 
+
+  -------------------------------------------------------------------------
+   
+ Gap:
+ - row-gap => To Choose the gaps between the rows
+ - column-gap => To Choose the gaps between the columns
+ - gap => [Row-gap] [Column-gap] 
+
+ -------------------------------------------------------------------------
+
+ Css Selectors:
+ - * => To choose all the elements
+ - Element => [p, div, h2]
+ - Element OtherELement => div p
+ - .class-name => To Choose the name of the class
+ - #id-name => To Choose the name of the id
+ - .parent .child => to choose a child in an parent with class
+ - .class-one.class-two => to choose an elemnt have two classes
+ - .class-name div => To choose all divs in .class-name
+ - Element.class-name => to choose the only "element" with the class
+ - .class-name > .child => Direct Child
+ - Element + Other Element => to choose OtherElement after Element [div + p]
+ - Element ~ Other Elements => to choose div siblings [p ~ div]
+ - [Attribute] => To choose the attribute
+ - Element[Attribute] => To choose an element han an attribute
+ - [Attribute=value]
+ - Element[Attribute=value] => input[type="search"]
+ - [Attribute~=value] => Contains A Word
+ - [Attribute*=value] => Contains A String
+ - [Attribute^=value] => Start With A String
+ - Element:first-child => To an Element Which is first child 
+ - Element:last-child => To an Element Which is last child 
+ - Element:first-of-type => To choose an element which is the first of his type
+ - Element:last-of-type => To choose an element which is the last of his type
+ - Element:only-child => To Choose an element Which is lonely Child
+ - Element:only-of-type => To Choose an element Which is lonely at his type
+ - Element:not(Selectors) => To choose all the elements except selectors
+ - Element:nth-child(n) => To choose the element by its number ,even, odd
+ - Element:nth-last-child(n) => To choose the element by by reverse its number ,even, odd
+ - Element:nth-of-type(n) => To choose the element by type and number ,even, odd
+ - Element:nth-of-type(n) => To choose the element by reverse by type and number ,even, odd
+
+ -------------------------------------------------------------------------
+
+ Css Variables :
+ - Root:: => To Make The Variables 
+ - --name => To Name The Variables In The Root
+ - Var() => To Use The Variables In The Element And Put The Name Between Brackets()
+ - FullBack Value => To mention a value between the name of the variable in the element 
+---
+  * You Can Use The Variable Name In the calc()
+  * You Can write and change the variable value in an element
+
+-------------------------------------------------------------------------
+
+Css Units :
+ - Px => Pixels
+ - Em => Chosen Pixels Times From The Father
+ - Rem => Root Time , Chosen Pixels Times From Html (16px)
+ - Percentage => The Percentage Taken From The Father
+ - Vw => Viewport Width
+
+ -------------------------------------------------------------------------
+
+Css Global Values : 
+- inheret
+- initial => To Turn back the element to its official
+- unset
+--- If Inherit => inheret
+--- If Not => initial
+- revert CSS Level [4]
+- all
+
+-------------------------------------------------------------------------
+
+Transform:
+
+2D Transform: (
+
+ - scaleX => To Choose the horizontaly extend for the element  (nums)
+ - scaleY => To Choose the Verticaly extend for the element
+ - scale => To Choose the both Verticaly , Horizotaly extend for the element [- negative flips it]
+
+ - Rotate => To allow the element to rotate
+ - deg => Degrees
+ - rad => Radians
+ - grad => Gradians
+ - turn => Turn
+
+ - Translate => To allow the element moves to X and Y axis (CssUnits)
+ - TranslateX => To allow the element moves to X axis
+ - TranslateY => To allow the element moves to Y  axis
+
+ - skew => To allow the element to devitate to X and Y axis (deg)
+ - skewX => To allow the element to devitate to X  axis
+ - skewY => To allow the element to devitate to Y axis
+
+ - martrix => matrix( scaleX() , skewY() , skewX() , scaleY() , translateX() , translateY()
+ )
+ - transform-origin : 
+ defvalue => 50% 50% 0
+ syntax =>
+ 2D Transform => transform-origin(X, Y)
+ 3D Transform => transform-origin(X, Y, Z)
+ X Axis
+ - CSS Unit [px, em, rem, %]
+ - Keyword 
+ -- Left = 0%
+ -- Center = 50%
+ -- Right = 100%
+ Y Axis
+ - CSS Unit [px, em, rem, %]
+ - Keyword 
+ -- Top = 0%
+ -- Center = 50%
+ -- Bottom = 100%
+
+3D Transform: (
+
+ - rotateX => To allow the element to rotate 3D in X axis (deg)
+ - rotateY => To allow the element to rotate 3D in Y axis
+ - rotateZ => As same as the default rotate 
+ - rotate3d => defvalue=> ( X0, Y0, Z0, deg0)
+ 
+ - perspective => To choose the distance between you and the element
+ - perspective-orgin => to choose the orgin for the element defvalue "values by reverse" => (50% 50%)
+ - translateZ => To allow the element moves to Z axis
+ - translate3d => defvalue=> (X0, Y0, Z0)
+ 
+ - backface-visibility => To control the visibility of the back face 
+ - transform-style => To choose the style of the transform "preserve 3d"
+ 
+ -------------------------------------------------------------------------
+
+ Animations ( Short Hand With Same Order ) :
+ - animation-name => to type the anitmation name which was after "@Keyframes"
+ - animation-duration => to choose the durations of the animation
+ - animation-timing-function => To choose how you want the function of the animation 
+ - animation-delay => To choose the amount of delay in the direction 
+ - animation-iteration-count => To choose the number of the animations
+ - animation-direction => To choose the direction of the animation
+ - animation-fill-mode => you can choose the animation to stop backward, forward or both
+ - animatiion-play-state => to choose the state (running - paused )
+
+ -------------------------------------------------------------------------
+ 
+ Background :
+ - Background-color => To Make A Background Color For The Selector (Hex Code, Color Name , Rgb Colors (You Can Control The Transparency Like This "179, 179, 179, 0.1") ) - #background 
+ - Background-image => To Make A Background Image For The Selector - #background  
+ - Background-repeat => To Choose How Do You Want To Repeat The Image In The Page - #background  
+ - Background-attachment => To Choose If You Want The Image To Be Fixed,scroll Or... - #background  
+ - Background-position => To Choose The Position Of The Image With (Names,px,%) - #background
+ - Background-size => To Control The Size Of The Image - #background 
+ - backdrop-filter => To put a filter like blur for background
+
+-------------------------------------------------------------------------
+
+Media-Queries:
+  @media condition {}
+
+-  Mobile => min-width: 767px 
+- Large Screens => (min-width: 1200px) 
+- Medium Screens => (min-width: 992px)
+- Small Screens => (min-width: 768px)
+  AND NEW UPDATES
+
+/*
+/* Large Screens  */
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+/* Medium Screens  */
+@media (min-width: 992px) {
+  .container {
+    width: 900px;
+  }
+}
+/* Small Screens  */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .container {
+    width: 600px;
+  }
+}
+/*
+-------------------------------------------------------------------------
+
+Position :
+ - Static => Default
+ - Absolute => To Choose The Position Relative To The Web
+ - Relative => To Choose The Position Relative To Itself
+ Z-index => Arranges The Element According To The Given Number
+  
+ - Fixed => To Choose The Position And Make The Element Fixed In Its Position
+ - Sticky => To Choose The Position And Make The Element Fixed In A Point
+
+-------------------------------------------------------------------------
+
+Pseudo Classes ( Typed After The Selector ) :
+ - :hover => To Choose What Happen When Mouse Touches The Element
+ - :checked => To Choose What Happen When Checkbox Is Checked
+ - :visited => To Choose What Happen For The Visited Links
+ - :empty => To Choose What Happen For The Empty Element
+ - :focus => To Choose What Happen When Focus On The Input Field
+ - ::first-letter => To Choose What Happen To The First Letter  
+ - ::first-line => To Choose What Happen To The First Letter 
+ - ::before => To Put Formats Before The Element  
+ - ::after => To Put Formats After The Element  
+   Content => To Choose The Content Of The Before Or After
+   - Counter-increment => Counts The Number Of The Elements And Its Name Should Be Typed In The Content
+   - Attr => Typed In The Content And Attributes Name Should Be Typed In It  
+
+-------------------------------------------------------------------------
+
+Vendor Prefix ( Typed Before The Element ) :
+ - -webkit- => Chrome, Safari, New Opera Version
+ - -moz- => Firefox
+ - -ms- => Ie , Edge 
+ - -o- =>  Old Versions Of Opera
+
+-------------------------------------------------------------------------
+
+Transition ( Short Hand With Same Order ) :
+ - Transition-property => To Choose The Elements You Want To Apply The Transform
+ - Transition-duration => To Choose Duration Time Taken By Time To Apply Transform
+ - Transition-delay => To Choose Delay Time Taken By Time To Apply Transform
+ - Transition-function => To Choose How Do You Want The Way Of Transition
+
+-------------------------------------------------------------------------
+
+The Margin Collapse : 
+ [1] Only Vertical Margin Collapse
+ [2] Bigger Margin Wins
+ [3] Margin Collapsing With Elements Without Anything Between
+ [4] Nesting Does Not Prevent Collapsing
+
+-------------------------------------------------------------------------
+
+Text :  
+ - Background-color - #text Color
+ - Color - #text Color
+ - Text-shadow = ( H-shadow V-shadow Blur Color ) => - #text Shadow
+ - Text-align => To Choose The Text Position (Center,left...  ) - #text 
+ - Direction => To Choose The Direction Of The Text (Rtl,ltr... ) - #text
+ - Vertical-align => To Choose The Position Of The Text To Image - #text 
+ - Text-decoration => To Make A Line Or Disable It ... - #text
+ - Text-transform => To Make The Text ( Uppercase,lowercase,capital... ) - #text
+ - Letter-spacing => To Make Spaces Between Letters - #text
+ - Word-spacing => To Make Spaces Between Words - #text
+ - Text-indent => To Make Spaces Before Text - #text
+ - Line-height => To Increase Height Between Words - #text 
+ - White-space => To Tell The Text How To Control With The White Space (Nowrap = Doesn't Allow Words To Come Down ) - #text
+ - Word-break => To Choose How To Break The Text To Prevent Overflow - #text
+ - Text-overflow => To Make Three Points For The Over Text - #text 
+ - catret-color => To choose the caret color 
+ - pointer-events => to choose the event of the element .. none to disable a (button, ...) to be clicked 
+-------------------------------------------------------------------------
+
+Gradients: (background-image)
+ - linear-gradient => [Direction || Angle] , [Color stop 1 (you can type how the color reachs), Color stop 2, ....... ]
+
+-------------------------------------------------------------------------
+
+Offset :
+ - Padding => To Give The Selector Internal Offset By Px  
+ - Padding-side => To Give The Selector Internal  Offset To The Chosen Side Px 
+ - Margin => To Give The Object External Offset By Px  
+ - Margin-side => To Give The Selector External Offset To The Chosen Side Px 
+
+-------------------------------------------------------------------------
+
+Border :
+ - Border => To Make A Border - #border
+ - Border-width => To Choose The Width Of The Border - #border
+ - Border-color => To Choose The Color Of The Border - #border
+ - Border-style => To Choose The Style Of The Border - #border
+
+-------------------------------------------------------------------------
+
+List:
+ - List-style-type => To Choose The Type Of The Point Before The List - #list
+ - List-style-position => To Choose If You Want The Point Inside Ir Outside The List - #list
+ - List-style-image => To Insert An Image To The List - #list
+
+-------------------------------------------------------------------------
+
+Overflow:
+ - Overflow => To Make Overflow For The Over Content (Necessary With The Float) - #overflow
+ - Overflow-y => To Make Overflow For The Over Content In Y Axis - #overflow
+ - Overflow-x => To Make Overflow For The Over Content In X Axis - #overflow
+
+-------------------------------------------------------------------------
+
+
+
+
+Importants:
+  Type:
+ - Display => To Change The Object Type - #display
+ - Visibility => To Control The Visibility Of The Object - #visibility
+-----
+  Group:
+ - Grouping => One, Two, Three, Four - #grouping
+ - Nesting => To Get An Element In An Element ( Div P ),( Nav Li ) - #nesting
+-----
+ - Inherit => To Make Any Element Inherit Anything From The Father 
+-----
+ - Cursor => To Choose The Courser Type
+-----
+ - Opacity => To Control The Transparency Of The Content (Text, Color, Background... )
+-----
+ - filter => To apply filter on the photo
+-----
+  Box:
+ - Box Shadow => To Make Shadow For The Element - #shadow
+ - ( H-shadow | V-shadow | Blur | Spread | Color | Inset  ) - #shadow
+ - Box Sizing => To Control The Size Of The Box (Element) - #sizing  
+  -----
+ - The !important Declaration => ( !important ) To Overwrite On Other Styles 
+  -----
+ - filter => To add a filter to the photo
+-------------------------------------------------------------------------
+
+
+ */
+
+
